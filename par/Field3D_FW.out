@@ -1,0 +1,159 @@
+ *******************************
+ * This is Traveltime Tomography program: Version 1.0            
+ * Parallel 3-D Traveltime Tomography based on Fast Sweeping Method and Adjoint-state Technique      
+ *                                                           
+ * written by  J.W. Huang                         
+ * See COPYING file for copying and redistribution conditions.
+ *******************************
+ 
+Only Applicable to Optimization Method: L-BFGS
+	...Default Memory Number m=5
+Read input parameters from file Field3D.inp
+User Parameters are as follows:
+
+The initial velocity file... ../models/Field3D_ini.vp
+|==========This is a NEW run===========|
+The source location file... ../models/Field3D.src
+The source binary file dimension... 690 x 4
+The receiver location file... ../models/Field3D.rec
+The receiver binary file dimension... 886326 x 7
+The size of the model... 150 X 310 X 200
+Sample Interval... 20.00m x 20.00m x 10.00m
+Final Velocity Model Output to ../models/Field3D.finalvp
+Regularization Parameters, (nux, nuy, nuz)=(200.000000, 200.000000, 10.000000)
+ 
+...reading file:
+	 ../models/Field3D_ini.vp
+ 
+...reading file:
+	 ../models/Field3D.src
+ 
+...reading file:
+	 ../models/Field3D.rec
+PE_1 (out of 16) handles 44 shots: 45 ~ 88
+!!!WARNING...Number of Shots 690 is not divisible to 16 PEs
+
+PE_0 (out of 16) handles 44 shots: 1 ~ 44
+PE_2 (out of 16) handles 43 shots: 89 ~ 131
+PE_3 (out of 16) handles 43 shots: 132 ~ 174
+PE_4 (out of 16) handles 43 shots: 175 ~ 217
+PE_5 (out of 16) handles 43 shots: 218 ~ 260
+...reading source file:
+	../models/Field3D.src
+ ----------------------------------
+| Total Number of Sources: 690
+| index	row	column	nz	NumofChn
+| 0	139	304	17	1089
+| 1	137	304	17	1129
+| 2	134	304	17	1106
+| 3	131	304	17	1135
+| 4	129	304	17	1178
+| 5	126	304	17	1469
+| 6	122	304	17	1222
+| 7	120	304	17	1377
+| 8	117	304	17	1226
+| 9	114	304	18	1138
+| 10	109	305	18	1187
+| 11	107	305	18	1392
+| 12	104	306	18	1188
+| 13	101	306	18	1189
+| 14	96	304	18	1069
+| 15	95	304	18	1082
+| 16	92	304	17	1110
+| 17	89	304	17	1093
+| 18	86	304	16	1162
+| 19	82	304	16	1174
+| 20	80	304	16	1193
+| ......
+| 689	142	4	15	1409
+| The End of Source Locations
+ ---------------------------------
+...reading receiver file:
+	../models/Field3D.rec
+ ----------------------------------
+| Total Number of Channels: 886326
+| index	row	column	nz		normal_ny	normal_nx	normal_nz	First Arrival
+| 0	146	250	12		-0.040	 0.014	-0.999	 0.236
+| 1	146	236	11		-0.028	 0.076	-0.997	 0.286
+| 2	146	235	11		-0.031	 0.061	-0.998	 0.293
+| 3	146	234	11		-0.033	 0.049	-0.998	 0.300
+| 4	146	233	11		-0.036	 0.041	-0.998	 0.304
+| 5	146	232	11		-0.040	 0.041	-0.998	 0.307
+| 6	146	231	11		-0.041	 0.035	-0.999	 0.310
+| 7	146	230	10		-0.044	 0.025	-0.999	 0.313
+| 8	146	229	10		-0.045	 0.024	-0.999	 0.316
+| 9	146	228	10		-0.046	 0.022	-0.999	 0.318
+| 10	146	227	10		-0.048	 0.025	-0.999	 0.322
+| 11	146	226	10		-0.048	 0.031	-0.998	 0.326
+| 12	146	225	10		-0.046	 0.021	-0.999	 0.329
+| 13	146	224	10		-0.046	 0.004	-0.999	 0.333
+| 14	146	223	10		-0.050	-0.003	-0.999	 0.337
+| 15	146	222	10		-0.053	-0.009	-0.999	 0.341
+| 16	146	221	10		-0.057	-0.010	-0.998	 0.345
+| 17	146	220	10		-0.060	-0.000	-0.998	 0.349
+| 18	146	219	10		-0.061	 0.002	-0.998	 0.351
+| 19	146	218	10		-0.061	-0.007	-0.998	 0.354
+| 20	146	217	10		-0.062	-0.010	-0.998	 0.356
+| ......
+PE_6 (out of 16) handles 43 shots: 261 ~ 303
+PE_7 (out of 16) handles 43 shots: 304 ~ 346
+PE_8 (out of 16) handles 43 shots: 347 ~ 389
+PE_9 (out of 16) handles 43 shots: 390 ~ 432
+PE_10 (out of 16) handles 43 shots: 433 ~ 475
+PE_11 (out of 16) handles 43 shots: 476 ~ 518
+PE_12 (out of 16) handles 43 shots: 519 ~ 561
+PE_13 (out of 16) handles 43 shots: 562 ~ 604
+PE_14 (out of 16) handles 43 shots: 605 ~ 647
+PE_15 (out of 16) handles 43 shots: 648 ~ 690
+| 886325	6	5	9		 0.070	 0.076	-0.995	 0.536
+| The End of Receiver Locations
+ ---------------------------------
+ 
+...writing file:
+	 Tr3D.0
+ 
+...writing file:
+	 Tr3D.2
+ 
+...writing file:
+	 Tr3D.1
+ 
+...writing file:
+	 Tr3D.15
+ 
+...writing file:
+	 Tr3D.14
+ 
+...writing file:
+	 Tr3D.3
+ 
+...writing file:
+	 Tr3D.12
+ 
+...writing file:
+	 Tr3D.4
+ 
+...writing file:
+	 Tr3D.13
+ 
+...writing file:
+	 Tr3D.5
+ 
+...writing file:
+	 Tr3D.7
+ 
+...writing file:
+	 Tr3D.6
+ 
+...writing file:
+	 Tr3D.9
+ 
+...writing file:
+	 Tr3D.10
+ 
+...writing file:
+	 Tr3D.11
+ 
+...writing file:
+	 Tr3D.8
+Total Elapse Time:  4634.9036 seconds (  1.2875 hours) 

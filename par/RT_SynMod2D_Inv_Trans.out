@@ -1,0 +1,351 @@
+ *******************************
+ * This is Travel Time Tomography program: Version 1.0            
+ * Parallel 2-D Traveltime Inversion based on Fast Sweeping Method and Adjoint-state Technique      
+ *                                                           
+ * written by  J.W. Huang                         
+ * Geological Survey of Canada, Ottawa, Canada         
+
+ * See COPYING file for copying and redistribution conditions.
+ *******************************
+ 
+Optimization Method: L-BFGS
+Specified Memory Number m=50 (Ignore if L-BFGS is not used)
+ *****************************************************************
+Inversion of Transmission ONLY
+ *****************************************************************
+Read input parameters from file RT_SynMod2D_Inv.inp
+User Parameters are as follows:
+
+The initial velocity file... ../models/RT_SynMod2D_Inv.vp
+The source location file... ../models/RT_SynMod2D.src
+The receiver location file... ../models/RT_SynMod2D_Inv_rand2p.rec
+The source binary file dimension... 56 x 3
+The receiver binary file dimension... 33600 x 7
+The reflector geometry file... ../models/RT_SynMod2D.ref
+The reflector geometry binary file dimension... 1200 x 3
+The size of the model... 160 X 600
+Sample Interval... 12.50m x 8.00m
+Final Velocity Model Output to ../models/RT_SynMod2D.finalvp
+The weighting factor matrix file... ../models/RT_SynMod2D_Inv.wr
+
+L-BFGS quasi-newton method In Use
+Line Search with Strong Wolfe Conditions
+ 
+...reading file:
+	 ../models/RT_SynMod2D_Inv.vp
+ 
+...reading file:
+	 ../models/RT_SynMod2D.src
+ 
+...reading file:
+	 ../models/RT_SynMod2D_Inv_rand2p.rec
+ 
+...reading file:
+	 ../models/RT_SynMod2D.ref
+PE_1 (out of 2) handles 28 shots: 29 ~ 56
+PE_0 (out of 2) handles 28 shots: 1 ~ 28
+...reading source file:
+	../models/RT_SynMod2D.src
+ ----------------------------------
+| Total Number of Sources: 56
+| index	row	column	NumofChn
+| 0	41	30	600
+| 1	42	40	600
+| 2	42	50	600
+| 3	39	60	600
+| 4	37	70	600
+| 5	33	80	600
+| 6	29	90	600
+| 7	25	100	600
+| 8	26	110	600
+| 9	26	120	600
+| 10	26	130	600
+| 11	25	140	600
+| 12	24	150	600
+| 13	25	160	600
+| 14	25	170	600
+| 15	25	180	600
+| 16	24	190	600
+| 17	25	200	600
+| 18	26	210	600
+| 19	27	220	600
+| 20	30	230	600
+| ......
+| 55	33	580	600
+| The End of Source Locations
+ ---------------------------------
+...reading receiver file:
+	../models/RT_SynMod2D_Inv_rand2p.rec
+ ----------------------------------
+| Total Number of Channels: 33600
+| index	row	column		normal_ny	normal_nx	TT	TR1......TRn
+| 0	39	1		-0.978	 0.207	 0.159	 0.000...... 0.582
+| 1	39	2		-0.997	 0.076	 0.156	 0.000...... 0.578
+| 2	39	3		-0.999	 0.044	 0.151	 0.000...... 0.574
+| 3	39	4		-0.999	-0.053	 0.141	 0.000...... 0.573
+| 4	39	5		-0.996	-0.088	 0.136	 0.000...... 0.573
+| 5	39	6		-0.992	 0.127	 0.129	 0.000...... 0.580
+| 6	39	7		-0.983	 0.182	 0.125	 0.000...... 0.575
+| 7	40	8		-0.996	 0.092	 0.119	 0.000...... 0.572
+| 8	40	9		-1.000	 0.010	 0.115	 0.000...... 0.570
+| 9	40	10		-0.995	-0.099	 0.113	 0.000...... 0.574
+| 10	39	11		-0.999	-0.049	 0.105	 0.000...... 0.577
+| 11	39	12		-1.000	 0.023	 0.101	 0.000...... 0.572
+| 12	39	13		-0.998	 0.057	 0.095	 0.000...... 0.573
+| 13	40	14		-0.987	 0.160	 0.092	 0.000...... 0.570
+| 14	40	15		-0.994	 0.105	 0.083	 0.000...... 0.568
+| 15	40	16		-1.000	 0.012	 0.077	 0.000...... 0.567
+| 16	40	17		-1.000	 0.031	 0.070	 0.000...... 0.570
+| 17	40	18		-0.997	 0.071	 0.067	 0.000...... 0.569
+| 18	40	19		-1.000	 0.029	 0.063	 0.000...... 0.567
+| 19	40	20		-1.000	-0.028	 0.057	 0.000...... 0.567
+| 20	40	21		-1.000	 0.012	 0.050	 0.000...... 0.567
+| ......
+| 33599	38	600		-0.946	 0.323	 0.113	 0.000...... 0.595
+| The End of Receiver Locations
+ ---------------------------------
+...reading reflector geometry file:
+	../models/RT_SynMod2D.ref
+ ----------------------------------
+| Total Number of reflector geometry points: 1200
+| Total Number of reflector layers: 2
+| index	dz		ref_ny	ref_nx
+| 0	640.000	-1.000	 0.000
+| 1	640.000	-1.000	 0.000
+| 2	640.000	-1.000	 0.000
+| 3	640.000	-1.000	 0.000
+| 4	640.000	-1.000	 0.000
+| 5	640.000	-1.000	 0.000
+| 6	640.000	-1.000	 0.000
+| 7	640.000	-1.000	 0.000
+| 8	640.000	-1.000	 0.000
+| 9	640.000	-1.000	 0.000
+| 10	640.000	-1.000	 0.000
+| 11	640.000	-1.000	 0.000
+| 12	640.000	-1.000	 0.000
+| 13	640.000	-1.000	 0.000
+| 14	640.000	-1.000	 0.000
+| 15	640.000	-1.000	 0.000
+| 16	640.000	-1.000	 0.000
+| 17	640.000	-1.000	 0.000
+| 18	640.000	-1.000	 0.000
+| 19	640.000	-1.000	 0.000
+| 20	640.000	-1.000	 0.000
+| ......
+| 1199	1280.000	-1.000	 0.000
+| The End of Reflector Geometries
+ ---------------------------------
+ 
+...reading file:
+	 ../models/RT_SynMod2D_Inv.wr
+Iterating No. 1: (nux,nuy)=(60.000000,20.000000)
+Average Time Residual (TR): 29.0876 ms	(T): 20.6191 ms	(R): 20.5169 ms
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_RT1
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_RT1
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_R1
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_R1
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_T1
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_T1
+Secant Method Line Search with Strong Wolfe Condition (alpha1=4.50578e+08)...
+(alpha0,alpha1,phi0,phi1,dphi0,dphi1)=(0 4.50578e+08 14.2143 35.6714 -1.32844e-09 1.01015e-08
+(alpha0,alpha1,phi0,phi1,dphi0,dphi1)=(0 5.23682e+07 14.2143 6.92095 -1.32844e-09 2.52431e-10
+Wolfe condition satisfied After 2 Iterations, takes 96.8026 seconds, Stepsize=52368244.619075
+...Updating velocity now...
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_1
+--------Interating No. 1 takes   145.9755 seconds---------------
+
+Iterating No. 2: (nux,nuy)=(60.000000,20.000000)
+Average Time Residual (TR): 28.8241 ms	(T): 20.2968 ms	(R): 20.4662 ms
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_RT2
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_RT2
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_R2
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_R2
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_T2
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_T2
+Secant Method Line Search with Strong Wolfe Condition (alpha1=1)...
+(alpha0,alpha1,phi0,phi1,dphi0,dphi1)=(0 1 13.9579 6.68095 -0.0249069 -0.0196307
+Wolfe condition satisfied After 1 Iterations, takes 47.6288 seconds, Stepsize=1.000000
+...Updating velocity now...
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_2
+--------Interating No. 2 takes    96.5525 seconds---------------
+
+Iterating No. 3: (nux,nuy)=(60.000000,20.000000)
+Average Time Residual (TR): 28.5042 ms	(T): 19.9418 ms	(R): 20.367 ms
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_RT3
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_RT3
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_R3
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_R3
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_T3
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_T3
+Secant Method Line Search with Strong Wolfe Condition (alpha1=1)...
+(alpha0,alpha1,phi0,phi1,dphi0,dphi1)=(0 1 13.6498 6.03185 -0.118529 -0.0340921
+Wolfe condition satisfied After 1 Iterations, takes 53.6258 seconds, Stepsize=1.000000
+...Updating velocity now...
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_3
+--------Interating No. 3 takes   101.5617 seconds---------------
+
+Iterating No. 4: (nux,nuy)=(60.000000,20.000000)
+Average Time Residual (TR): 27.5283 ms	(T): 18.9483 ms	(R): 19.9692 ms
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_RT4
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_RT4
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_R4
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_R4
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_T4
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_T4
+Secant Method Line Search with Strong Wolfe Condition (alpha1=1)...
+(alpha0,alpha1,phi0,phi1,dphi0,dphi1)=(0 1 12.7311 5.91788 -0.0216437 -0.00300874
+Wolfe condition satisfied After 1 Iterations, takes 54.6787 seconds, Stepsize=1.000000
+...Updating velocity now...
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_4
+--------Interating No. 4 takes   108.3768 seconds---------------
+
+Iterating No. 5: (nux,nuy)=(60.000000,20.000000)
+Average Time Residual (TR): 27.3816 ms	(T): 18.7685 ms	(R): 19.9373 ms
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_RT5
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_RT5
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_R5
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_R5
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_T5
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_T5
+Secant Method Line Search with Strong Wolfe Condition (alpha1=1)...
+(alpha0,alpha1,phi0,phi1,dphi0,dphi1)=(0 1 12.5958 5.87608 -0.00870218 -0.000583692
+Wolfe condition satisfied After 1 Iterations, takes 54.9163 seconds, Stepsize=1.000000
+...Updating velocity now...
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_5
+--------Interating No. 5 takes   110.2949 seconds---------------
+
+Iterating No. 6: (nux,nuy)=(60.000000,20.000000)
+Average Time Residual (TR): 27.2957 ms	(T): 18.702 ms	(R): 19.8819 ms
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_RT6
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_RT6
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_R6
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_R6
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_T6
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_T6
+Secant Method Line Search with Strong Wolfe Condition (alpha1=1)...
+(alpha0,alpha1,phi0,phi1,dphi0,dphi1)=(0 1 12.5169 5.85555 -0.00357312 -0.000224179
+Wolfe condition satisfied After 1 Iterations, takes 55.8577 seconds, Stepsize=1.000000
+...Updating velocity now...
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_6
+--------Interating No. 6 takes   111.1793 seconds---------------
+
+Iterating No. 7: (nux,nuy)=(60.000000,20.000000)
+Average Time Residual (TR): 27.3 ms	(T): 18.6693 ms	(R): 19.9185 ms
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_RT7
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_RT7
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_R7
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_R7
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_bf_regu_T7
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_af_regu_T7
+Secant Method Line Search with Strong Wolfe Condition (alpha1=1)...
+(alpha0,alpha1,phi0,phi1,dphi0,dphi1)=(0 1 12.5209 5.84711 -0.000985986 -0.000722429
+Wolfe condition satisfied After 1 Iterations, takes 56.8925 seconds, Stepsize=1.000000
+...Updating velocity now...
+ 
+...writing file:
+	 ../models/RT_SynMod2D_Inv_7
+--------Interating No. 7 takes   113.2284 seconds---------------
+
+ 
+...writing file:
+	 ../models/RT_SynMod2D.finalvp
+Total Elapse Time:   787.3752 seconds (  0.2187 hours) 
+=================================================================
+||        This is a 2D Inversion of Transmission Time ONLY!      ||
+=================================================================

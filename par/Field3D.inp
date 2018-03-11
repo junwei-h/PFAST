@@ -1,0 +1,29 @@
+#The Input file for Travel time Tomography using Fast Sweeping Method 
+#software developed by Junwei Huang, Starting from Mar 08, 2010
+#====================
+#The file name of the initial velocity
+../models/Field3D_ini.vp
+#The file name of the source locations
+../models/Field3D.src
+690 4
+#The file name of the receiver locations
+../models/Field3D.rec
+886326 7
+#Size of the model, rows, columns, sample interval
+150.000000 310.000000 200.000000 20.000000 20.000000 10.000000
+#===Output the inversed model===
+../models/Field3D.finalvp
+#===Regularization Parameter: nux, nuy, nuz
+200 200 10
+#===Inversion Scheme tag (schemetag) and Line search tag (lsrc)
+#schemetag:
+#	1-HS Nonlinear Conjugate Method
+#	2-CGDESCENT Nonlinear Conjugate Method
+#	3-L-BFGS quasi-newton method
+#	0-Steepest Decent method
+#lsrc:
+#	1-Secant method with exact Conditions
+#	2-Secant method with Strong Wolfe Conditions
+#	3-Cubic Interpolation method with Strong Wolfe Conditions
+#	0-No Line Search, i.e. Steepest Decent
+3 2

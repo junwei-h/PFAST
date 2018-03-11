@@ -1,0 +1,35 @@
+#The Input file for Travel time Tomography using Fast Sweeping Method 
+#software developed by Junwei Huang @ NRCan, Ottawa, starting from Mar 08, 2010
+#====================
+#The file name of the initial velocity
+../models/RT_SynMod2D_Inv.vp
+#The file name of the source locations
+../models/RT_SynMod2D.src
+56 3
+#The file name of the receiver locations for Tran and Reflection
+../models/RT_SynMod2D_Inv_rand2p.rec
+33600 7
+#The file name of the reflector locations
+../models/RT_SynMod2D.ref
+1200 3
+#Size of the model, rows, columns, sample interval
+160.000000 600.000000 12.500000 8.000000
+#===Output the inversed model===
+../models/RT_SynMod2D.finalvp
+#===Regularization Parameter: nux, nuz
+60 20
+#===Weighting factor of Reflection (WR)
+../models/RT_SynMod2D_Inv.wr
+#===Inversion Scheme tag (schemetag) and Line search tag (lsrc)
+#recommend: 3 2, 3 3, 1 2, 1 3, 3 1, 2 2, 2 3, 2 1, 0 0
+#schemetag:
+#	1-HS Nonlinear Conjugate Method
+#	2-CGDESCENT Nonlinear Conjugate Method
+#	3-L-BFGS quasi-newton method
+#	0-Steepest Decent method
+#lsr:
+#	1-Secant method with exact Conditions
+#	2-Secant method Line Search with Strong Wolfe Conditions
+#	3-Cubic Interpolation method with Strong Wolfe Conditions
+#	0-No Line Search for Steepest Decent only
+3 2

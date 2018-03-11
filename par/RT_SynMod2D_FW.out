@@ -1,0 +1,475 @@
+ *******************************
+ * This is Travel Time Tomography program: Version 1.0            
+ * Parallel 2-D Traveltime Inversion based on Fast Sweeping Method and Adjoint-state Technique      
+ *                                                           
+ * written by  J.W. Huang                         
+ * Geological Survey of Canada, Ottawa, Canada         
+
+ * See COPYING file for copying and redistribution conditions.
+ *******************************
+ 
+Read input parameters from file RT_SynMod2D_FW.inp
+User Parameters are as follows:
+
+The initial velocity file... ../models/RT_SynMod2D_FW.vp
+The source location file... ../models/RT_SynMod2D.src
+The receiver location file... ../models/RT_SynMod2D_FW.rec
+The source binary file dimension... 56 x 3
+The receiver binary file dimension... 33600 x 4
+The reflector geometry file... ../models/RT_SynMod2D.ref
+The reflector geometry binary file dimension... 1200 x 3
+The size of the model... 160 X 600
+Sample Interval... 12.50m x 8.00m
+Final Velocity Model Output to RT_SynMod2D.finalvp
+The weighting factor matrix file... 0.5
+
+L-BFGS quasi-newton method In Use
+Line Search with Strong Wolfe Conditions
+ 
+...reading file:
+	 ../models/RT_SynMod2D_FW.vp
+ 
+...reading file:
+	 ../models/RT_SynMod2D.src
+ 
+...reading file:
+	 ../models/RT_SynMod2D_FW.rec
+ 
+...reading file:
+	 ../models/RT_SynMod2D.ref
+PE_1 (out of 2) handles 28 shots: 29 ~ 56
+PE_0 (out of 2) handles 28 shots: 1 ~ 28
+...reading source file:
+	../models/RT_SynMod2D.src
+ ----------------------------------
+| Total Number of Sources: 56
+| index	row	column	NumofChn
+| 0	41	30	600
+| 1	42	40	600
+| 2	42	50	600
+| 3	39	60	600
+| 4	37	70	600
+| 5	33	80	600
+| 6	29	90	600
+| 7	25	100	600
+| 8	26	110	600
+| 9	26	120	600
+| 10	26	130	600
+| 11	25	140	600
+| 12	24	150	600
+| 13	25	160	600
+| 14	25	170	600
+| 15	25	180	600
+| 16	24	190	600
+| 17	25	200	600
+| 18	26	210	600
+| 19	27	220	600
+| 20	30	230	600
+| ......
+| 55	33	580	600
+| The End of Source Locations
+ ---------------------------------
+...reading receiver file:
+	../models/RT_SynMod2D_FW.rec
+ ----------------------------------
+| Total Number of Channels: 33600
+| index	row	column		normal_ny	normal_nx	TT	TR1......TRn
+| 0	39	1		-0.978	 0.207	308.546	25.000......-0.997
+| 1	39	2		-0.997	 0.076	308.642	37.500......-0.999
+| 2	39	3		-0.999	 0.044	309.640	50.000......-0.999
+| 3	39	4		-0.999	-0.053	307.326	62.500......-0.996
+| 4	39	5		-0.996	-0.088	307.441	75.000......-0.992
+| 5	39	6		-0.992	 0.127	310.534	87.500......-0.983
+| 6	39	7		-0.983	 0.182	312.079	100.000......-0.996
+| 7	40	8		-0.996	 0.092	312.832	112.500......-1.000
+| 8	40	9		-1.000	 0.010	312.320	125.000......-0.995
+| 9	40	10		-0.995	-0.099	310.344	137.500......-0.999
+| 10	39	11		-0.999	-0.049	311.101	150.000......-1.000
+| 11	39	12		-1.000	 0.023	310.928	162.500......-0.998
+| 12	39	13		-0.998	 0.057	312.527	175.000......-0.987
+| 13	40	14		-0.987	 0.160	314.968	187.500......-0.994
+| 14	40	15		-0.994	 0.105	315.163	200.000......-1.000
+| 15	40	16		-1.000	 0.012	315.263	212.500......-1.000
+| 16	40	17		-1.000	 0.031	315.945	225.000......-0.997
+| 17	40	18		-0.997	 0.071	317.037	237.500......-1.000
+| 18	40	19		-1.000	 0.029	316.683	250.000......-1.000
+| 19	40	20		-1.000	-0.028	316.339	262.500......-1.000
+| 20	40	21		-1.000	 0.012	316.990	275.000......-0.997
+| ......
+| 33599	38	600		-0.946	 0.323	 0.000	 0.000...... 0.000
+| The End of Receiver Locations
+ ---------------------------------
+...reading reflector geometry file:
+	../models/RT_SynMod2D.ref
+ ----------------------------------
+| Total Number of reflector geometry points: 1200
+| Total Number of reflector layers: 2
+| index	dz		ref_ny	ref_nx
+| 0	640.000	-1.000	 0.000
+| 1	640.000	-1.000	 0.000
+| 2	640.000	-1.000	 0.000
+| 3	640.000	-1.000	 0.000
+| 4	640.000	-1.000	 0.000
+| 5	640.000	-1.000	 0.000
+| 6	640.000	-1.000	 0.000
+| 7	640.000	-1.000	 0.000
+| 8	640.000	-1.000	 0.000
+| 9	640.000	-1.000	 0.000
+| 10	640.000	-1.000	 0.000
+| 11	640.000	-1.000	 0.000
+| 12	640.000	-1.000	 0.000
+| 13	640.000	-1.000	 0.000
+| 14	640.000	-1.000	 0.000
+| 15	640.000	-1.000	 0.000
+| 16	640.000	-1.000	 0.000
+| 17	640.000	-1.000	 0.000
+| 18	640.000	-1.000	 0.000
+| 19	640.000	-1.000	 0.000
+| 20	640.000	-1.000	 0.000
+| ......
+| 1199	1280.000	-1.000	 0.000
+| The End of Reflector Geometries
+ ---------------------------------
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src28_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src28_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src0_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src0_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src29_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src29_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src1_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src1_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src30_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src30_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src2_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src2_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src31_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src31_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src3_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src3_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src32_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src32_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src4_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src4_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src33_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src33_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src5_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src5_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src34_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src34_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src6_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src6_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src35_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src35_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src7_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src7_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src36_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src36_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src8_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src8_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src37_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src37_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src9_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src9_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src38_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src38_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src10_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src10_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src39_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src39_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src11_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src11_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src40_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src40_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src12_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src12_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src41_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src41_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src13_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src13_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src42_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src42_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src14_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src14_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src43_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src43_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src15_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src15_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src44_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src44_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src16_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src16_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src45_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src45_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src17_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src17_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src46_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src46_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src18_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src18_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src47_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src47_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src19_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src19_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src48_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src48_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src20_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src20_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src49_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src49_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src21_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src21_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src50_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src50_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src22_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src22_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src51_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src51_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src23_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src23_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src52_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src52_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src24_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src24_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src53_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src53_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src25_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src25_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src54_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src54_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src26_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src26_TTu.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src55_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src55_TTu.2d
+ 
+...writing file:
+	 Tr2D.1
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src27_TTd.2d
+ 
+...writing file:
+	 ../models/RT_SynMod2D_FW_Src27_TTu.2d
+ 
+...writing file:
+	 Tr2D.0
+Total Elapse Time:    28.7845 seconds (  0.0080 hours) 
